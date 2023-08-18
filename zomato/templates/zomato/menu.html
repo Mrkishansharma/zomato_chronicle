@@ -1,0 +1,14 @@
+<!-- zomato/templates/zomato/menu.html -->
+
+{% extends 'zomatochronicals/base.html' %}
+
+
+{% block content %}
+  <h1>Zomato!</h1>
+  <h2>Menu:</h2>
+  <ul>
+    {% for dish_id, dish_info in menu.items %}
+      <li>{{ dish_info.name }} - ${{ dish_info.price }} {% if dish_info.available %}(Available){% else %}(Not Available){% endif %}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+<!-- zomato/templates/zomato/add_dish.html -->
+
+{% extends 'zomatochronicals/base.html' %}
+
+{% block content %}
+  <h2>Add Dish</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Dish</button>
+  </form>
+  <a href="{% url 'display_menu' %}">Menu</a>
+{% endblock %}
